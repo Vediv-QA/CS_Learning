@@ -1,6 +1,5 @@
 ﻿try
 {
-    {
         int size = 10;
         var num_1 = new string[size];
         int i = 0;
@@ -89,7 +88,7 @@
                     }
                     else if (choice == "2")
                     {
-                        var num_4 = new string[size + 5];
+                        var num_4 = new string[size + 1000];
                         for (int k = 0; k < num_4.Length; k++)
                         {
                             num_2[k] = num_4[k];
@@ -125,9 +124,9 @@
                 }
                 i++;
             }
-        }
-    }
+        } 
 }
+
 catch (Exception ex)
 {
     Console.WriteLine($"что-то пошло не так: {ex.Message}");
