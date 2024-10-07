@@ -29,7 +29,7 @@
                     arr_1 = new double[5];
                     arrIndex = 0;
                     Console.WriteLine("\nМассив очищен^_^");
-                    Console.WriteLine($"Кол-во символов в массиве: {arrIndex}");
+                    Console.WriteLine($"Кол-во элементов в массиве: {arrIndex}");
                     Console.WriteLine($"Кол-во ошибок: {arrErr}");
                     Console.Write("Что делать дальше?:\n1 - Продолжить\n2 - Выйти\nВыбор: ");
                     string? choice_1 = Console.ReadLine();
@@ -38,7 +38,7 @@
                         case "1":
                             continue;
                         case "2":
-                            Console.WriteLine($"Кол-во символов в массиве: {arrIndex}");
+                            Console.WriteLine($"Кол-во элементов в массиве: {arrIndex}");
                             Console.WriteLine($"Кол-во ошибок: {arrErr}");
                             return;
                         default:
@@ -49,30 +49,29 @@
                 }
                 else if (choice == "3")
                 {
-                    Console.WriteLine($"Кол-во символов в массиве: {arrIndex}");
+                    Console.WriteLine($"Кол-во элементов в массиве: {arrIndex}");
                     Console.WriteLine($"Кол-во ошибок: {arrErr}");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Такого варианта нет");
+                    Console.WriteLine("Такого варианта нет, продолжается выполнение программы");
                     arrErr++;
-                    break;
+                    continue;
                 }
             }
             else
             {
-                var arrSymbol = double.Parse(input);
-                if (arrIndex < arr_1.Length)
+                arr_1[arrIndex] = double.Parse(input);
+                arrIndex++;
+                if (arrIndex == arr_1.Length)
                 {
-                    arr_1[arrIndex] = arrSymbol;
                     double[] arr_2 = new double[arr_1.Length * 2];
                     for (int i = 0; i < arr_1.Length; i++)
                     {
                         arr_2[i] = arr_1[i];
                     }
                     arr_1 = arr_2;
-                    arrIndex++;
                 }
             }
 
