@@ -33,20 +33,18 @@
                     Console.WriteLine($"Кол-во ошибок: {arrErr}");
                     Console.Write("Что делать дальше?:\n1 - Продолжить\n2 - Выйти\nВыбор: ");
                     string? choice_1 = Console.ReadLine();
-                    if (choice_1 == "1")
-                    {
-                        continue;
-                    }
-                    else if (choice_1 == "2")
-                    {
-                        Console.WriteLine($"Кол-во символов в массиве: {arrIndex}");
-                        Console.WriteLine($"Кол-во ошибок: {arrErr}");
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Такого варианта нет");
-                        break;
+                    switch (choice_1)
+                    { 
+                        case "1":
+                            continue;
+                        case "2":
+                            Console.WriteLine($"Кол-во символов в массиве: {arrIndex}");
+                            Console.WriteLine($"Кол-во ошибок: {arrErr}");
+                            return;
+                        default:
+                            Console.WriteLine("Такого варианта нет, продолжается выполнение программы");
+                            arrErr++;
+                            break;
                     }
                 }
                 else if (choice == "3")
