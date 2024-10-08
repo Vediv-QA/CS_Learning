@@ -73,6 +73,7 @@
             Console.WriteLine("\nВведен некорректный символ!");
             Console.WriteLine("Созданный массив: ");
             showArray();
+            Console.WriteLine("");
             arrErr++;
             continue;
         }
